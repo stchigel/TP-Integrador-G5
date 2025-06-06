@@ -30,3 +30,5 @@ begin
     close publicacionesCursor;
 end //
 delimiter ;
+
+
