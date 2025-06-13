@@ -1,5 +1,6 @@
 -- Categorías
-INSERT INTO Categoria VALUES (1, 'Tecnología'), (2, 'Electrodomésticos'), (3, 'Juguetes');
+INSERT INTO Categoria VALUES (1, 'Tecnología'), (2, 'Electrodomésticos'), (3, 'Juguetes'); 
+INSERT INTO Categoria VALUES (4, 'ParaProbar');
 
 -- Métodos de pago
 INSERT INTO MetodoPago VALUES 
@@ -27,15 +28,25 @@ INSERT INTO Producto VALUES
 (2, 'Licuadora Turbo', 'Licuadora de 1000W', 30000, 2),
 (3, 'Muñeco Articulado', 'Muñeco de colección', 15000, 3);
 
+INSERT INTO Producto VALUES
+(4, 'Anashei', 'Muñeco de colección', 15000, 3);
+
 -- Publicaciones (algunas con subasta, otras con venta directa)
 INSERT INTO Publicacion VALUES
 (1, 'Último modelo', 150000, 'Platino', 'Finalizada', 10000002, 1, 1, "2025-04-23"),
 (2, 'Potente y silenciosa', 30000, 'Oro', 'Activa', 10000003, 2, 2, "2024-12-20"),
 (3, 'Muñeco raro', 15000, 'Plata', 'Activa', 10000004, 3, 3, "2025-06-03");
+INSERT INTO Publicacion VALUES
+(4, 'Publi Prueba', 30000, 'Oro', 'Activa', 10000003, 2, 2, "2024-12-20");
 
 -- Venta directa (solo una concretada)
 INSERT INTO VentaDirecta VALUES
 (1, 150000, 90, 85, 1, 10000005, 1, 1);
+INSERT INTO VentaDirecta VALUES
+(2, 150000, 0, 0, 1, 10000005, 2, 1);
+INSERT INTO VentaDirecta VALUES
+(3, 30000, 0, 0, 4, 10000003, 1, 2);
+delete from VentaDirecta where id=3;
 
 -- Respuestas
 INSERT INTO Respuestas VALUES
@@ -46,10 +57,16 @@ INSERT INTO Respuestas VALUES
 INSERT INTO Preguntas VALUES
 (1, '¿Está nuevo?', 10000005, 2, 1, '2025-05-31'),
 (2, '¿Cuántas velocidades tiene?', 10000005, 2, 2, '2025-06-01');
+INSERT INTO Preguntas VALUES
+(3, '¿Está nuevo?', 10000003, 2, 1, '2025-05-31');
+INSERT INTO Preguntas VALUES
+(4, '¿Está a prueba?', 10000003, 4, 2, '2025-05-31');
 
 -- Subasta (asociada a publicación 3)
 INSERT INTO Subasta VALUES
 (1, 15000, 3, '2025-06-10 23:59:59');
+INSERT INTO Subasta VALUES
+(2, 16000, 4, '2025-06-10 23:59:59');
 
 -- Ofertas
 INSERT INTO Oferta VALUES
