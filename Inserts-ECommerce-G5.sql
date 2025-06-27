@@ -1,3 +1,9 @@
+ALTER TABLE Publicacion ADD COLUMN fechaPublicacion datetime;
+ALTER TABLE Subasta DROP COLUMN Ofertamax_id;
+ALTER TABLE Producto MODIFY COLUMN Descripcion varchar(450);
+ALTER TABLE Producto MODIFY COLUMN Nombre varchar(450);
+ALTER TABLE Publicacion MODIFY COLUMN Descripcion varchar(450);
+
 -- Categorías
 INSERT INTO Categoria VALUES (1, 'Tecnología'), (2, 'Electrodomésticos'), (3, 'Juguetes'); 
 INSERT INTO Categoria VALUES (4, 'ParaProbar');
